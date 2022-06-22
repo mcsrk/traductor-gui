@@ -1,12 +1,12 @@
 * {
-  font-family: arial,sans-serif;
+  font-family: arial, sans-serif;
 }
 
 body {
   margin: 0;
   background-color: #202124;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   height: 100vh;
   align-items: center;
 }
@@ -17,7 +17,7 @@ body {
   height: 360px;
 }
 
-.output, 
+.output,
 .input {
   display: flex;
   flex-direction: column;
@@ -40,14 +40,32 @@ textarea {
 }
 
 .output textarea {
-  background-color: #303134
+  background-color: #303134;
 }
 
-.arrow-container {
+.traducir-button {
   padding: 15px;
+  height: 35px;
+  margin: 0 15px;
+  background-color: transparent;
+  border: 1px solid #818588;
+  border-radius: 10px;
+  color: #bdc1c6;
+  resize: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.traducir-button:hover {
+  background-color: #303134;
+  border: 1px solid #818588;
 }
 
-.arrow-container svg {
+.traducir-button:focus {
+  background-color: #4d4e52;
+  border: 1px solid #fafafa;
+}
+
+.traducir-button svg {
   width: 26px;
   height: 26px;
   fill: #5a5a5d;
@@ -62,7 +80,6 @@ textarea {
   display: flex;
   justify-content: center;
   padding: 10px;
-
 }
 
 input {
@@ -74,11 +91,11 @@ input {
   height: 40px;
   background-color: transparent;
   width: 100%;
-  
 }
 
 .search-bar input {
-  background: url(https://www.gstatic.com/images/icons/material/system/2x/search_grey600_24dp.png) right 8px center no-repeat;
+  background: url(https://www.gstatic.com/images/icons/material/system/2x/search_grey600_24dp.png)
+    right 8px center no-repeat;
   background-size: 24px 24px;
   padding-left: 16px;
   padding-right: 40px;
@@ -120,7 +137,6 @@ input {
   background-color: #5a5a5d;
 }
 
-
 .list-item {
   display: flex;
 }
@@ -132,7 +148,7 @@ input {
 }
 
 .button-container {
-  color:#bdc1c6;
+  color: #bdc1c6;
   padding: 18px;
   height: 20px;
 }
@@ -157,5 +173,6 @@ input {
   left: 265px;
   top: -156px;
   font-size: 50px;
-  color:#bdc1c6;
+  color: #bdc1c6;
+  cursor: pointer;
 }

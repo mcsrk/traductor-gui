@@ -1,43 +1,36 @@
-import { useEffect, useState } from 'react'
-import TextBox from './components/TextBox'
-import Arrows from './components/Arrows'
-import Button from './components/Button'
-import Modal from './components/Modal'
-import axios from 'axios'
+import { useEffect, useState } from "react";
+import React from "react";
+
+import TextBox from "./components/TextBox";
+import Arrows from "./components/Arrows";
+import Button from "./components/Button";
+import Modal from "./components/Modal";
+import axios from "axios";
 
 const App = () => {
-  const [showModal, setShowModal] = useState(false)
-  const [languages, setLanguages] = useState(null)
-  const [inputLanguage, setInputLanguage] = useState('English')
-  const [outputLanguage, setOutputLanguage] = useState('Polish')
-  const [textToTranslate, setTextToTranslate] = useState('')
-  const [translatedText, setTranslatedText] = useState('')
-
-
-  const getLanguages = async () => {
-    const response = await axios.get('http://localhost:8000/languages')
-    setLanguages(response.data)
-  }
-  useEffect(() => {
-    getLanguages()
-  }, [])
+  const [showModal, setShowModal] = useState(false);
+  const [inputLanguage, setInputLanguage] = useState("HTML");
+  const [outputLanguage, setOutputLanguage] = useState("Slim");
+  const [textToTranslate, setTextToTranslate] = useState("");
+  const [translatedText, setTranslatedText] = useState("");
 
   const translate = async () => {
-    console.log('trainsalte')
+    console.log("trainsalte");
     const data = {
-      textToTranslate, outputLanguage, inputLanguage
-    }
-    const response = await axios.get('http://localhost:8000/translation', {
-      params : data
-    })
-    console.log('response', response)
-    setTranslatedText(response.data)
-  }
+      textToTranslate,
+      outputLanguage,
+      inputLanguage,
+    };
+    const response = await axios.get("http://localhost:8000/translation", {
+      params: data,
+    });
+    console.log("response", response);
+    setTranslatedText(response.data);
+  };
 
   const handleClick = () => {
-    setInputLanguage(outputLanguage)
-    setOutputLanguage(inputLanguage)
-  }
+    console.log({ textToTranslate });
+  };
 
   return (
     <div className="app">
@@ -51,35 +44,34 @@ const App = () => {
             textToTranslate={textToTranslate}
             setTranslatedText={setTranslatedText}
           />
-          <div className="arrow-container" onClick={handleClick}>
-            <Arrows />
-          </div>
+          <button className="traducir-button" onClick={handleClick}>
+            Traducir
+          </button>
           <TextBox
             style="output"
             setShowModal={setShowModal}
             selectedLanguage={outputLanguage}
             translatedText={translatedText}
           />
-          <div className="button-container" onClick={translate}>
+          {/* <div className="button-container" onClick={translate}>
             <Button />
-          </div>
+          </div> */}
         </>
       )}
       {showModal && (
         <Modal
           showModal={showModal}
           setShowModal={setShowModal}
-          languages={languages}
           chosenLanguage={
-            showModal === 'input' ? inputLanguage : outputLanguage
+            showModal === "input" ? inputLanguage : outputLanguage
           }
           setChosenLanguage={
-            showModal === 'input' ? setInputLanguage : setOutputLanguage
+            showModal === "input" ? setInputLanguage : setOutputLanguage
           }
         />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

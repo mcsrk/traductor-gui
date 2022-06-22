@@ -1,4 +1,5 @@
-import SelectDropDown from './SelectDropDown'
+import React from "react";
+import SelectDropDown from "./SelectDropDown";
 
 const TextBox = ({
   style,
@@ -9,11 +10,10 @@ const TextBox = ({
   translatedText,
   setTranslatedText,
 }) => {
-
   const handleClick = () => {
-    setTextToTranslate('')
-    setTranslatedText('')
-  }
+    setTextToTranslate("");
+    setTranslatedText("");
+  };
   return (
     <div className={style}>
       <SelectDropDown
@@ -22,19 +22,19 @@ const TextBox = ({
         selectedLanguage={selectedLanguage}
       />
       <textarea
-        disabled={style === 'output'}
+        disabled={style === "output"}
         className={style}
-        placeholder={style == 'input' ? 'Enter text' : 'Translation'}
+        placeholder={style == "input" ? "Enter text" : "Translation"}
         onChange={(e) => setTextToTranslate(e.target.value)}
-        value={style === 'input' ? textToTranslate : translatedText}
+        value={style === "input" ? textToTranslate : translatedText}
       />
-      {style === 'input' && (
+      {style === "input" && (
         <div className="delete" onClick={handleClick}>
           ˟
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default TextBox
+export default TextBox;

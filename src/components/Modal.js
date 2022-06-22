@@ -1,27 +1,23 @@
-import { useState } from 'react'
+import { useState } from "react";
+import React from "react";
 
 const Modal = ({
   showModal,
   setShowModal,
-  languages,
   chosenLanguage,
   setChosenLanguage,
 }) => {
-  const [searchedLanguage, setSearchedLanguage] = useState('')
-
-  const filteredLanguages = languages.filter((language) =>
-    language.toLowerCase().startsWith(searchedLanguage.toLowerCase())
-  )
+  const [searchedLanguage, setSearchedLanguage] = useState("");
 
   const handleClick = (e) => {
-    setChosenLanguage(e.target.textContent)
-    setShowModal(false)
-  }
+    setChosenLanguage(e.target.textContent);
+    setShowModal(false);
+  };
 
   const handleChange = (e) => {
-    setSearchedLanguage(e.target.value)
-    setChosenLanguage(e.target.value)
-  }
+    setSearchedLanguage(e.target.value);
+    setChosenLanguage(e.target.value);
+  };
   return (
     <div className="option-list">
       <div className="search-bar">
@@ -38,26 +34,21 @@ const Modal = ({
       </div>
       <div className="option-container">
         <ul>
-          {filteredLanguages?.map((filteredLanguage, _index) => (
-            <div className="list-item">
-              <div className="icon">
-                {chosenLanguage === filteredLanguage ? '✓' : ''}
-              </div>
-              <li
-                key={_index}
-                onClick={handleClick}
-                style={{
-                  color: chosenLanguage === filteredLanguage ? '#8ab4f8' : null,
-                }}
-              >
-                {filteredLanguage}
-              </li>
-            </div>
-          ))}
+          <div className="list-item">
+            <li
+              key={"_index"}
+              onClick={handleClick}
+              style={{
+                color: "#8ab4f8",
+              }}
+            >
+              Slim
+            </li>
+          </div>
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;
