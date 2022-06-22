@@ -22,6 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 300px;
+  font-size: 12px;
 }
 
 textarea {
@@ -87,7 +88,7 @@ input {
   border-radius: 8px;
   box-sizing: border-box;
   color: #bdc1c6;
-  font-size: 14px;
+  font-size: 10px;
   height: 40px;
   background-color: transparent;
   width: 100%;
