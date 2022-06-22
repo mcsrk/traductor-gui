@@ -1,7 +1,7 @@
 # Traductor de HTML a HAML
-Lenguajes de programación 2022-1
-Acosta Jhon
-Huertas Andryut
+Lenguajes de programación 2022-1  
+Acosta Jhon  
+Huertas Andryut  
 Mateus David
 ### FrontEnd de Proyecto Final - Lenguajes de Programación 2022-1
 Aplicación de cliente frontend hecha en ReactJs cuyo proposito es facilitar la traducción de código HTML a HAML.
