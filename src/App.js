@@ -20,10 +20,29 @@ const App = () => {
     const encodedString = Buffer.from(textToTranslate).toString("base64");
     console.log({ encodedString });
 
+
+    var config = {
+      method: 'post',
+      url: 'http://0.0.0.0:4567/translate',
+      headers: { 
+        'Content-Type': 'text/html'
+      },
+      data : textToTranslate
+    };
+    
+    axios(config)
+    .then(function (response) {
+      setTranslatedText(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+/*
     axios({
       method: "post",
-      url: "http://localhost:4567/translate",
-      data: textToTranslate,
+      url: "http://0.0.0.0:4567/translate",
+      data: "Data",
       headers: { "Content-Type": "text/html" },
     })
       .then((response) => {
@@ -35,6 +54,7 @@ const App = () => {
         //handle error
         console.log(response);
       });
+      */
   };
 
   return (
