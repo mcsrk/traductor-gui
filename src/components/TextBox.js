@@ -27,7 +27,7 @@ const TextBox = ({
         <textarea
           disabled={style === "output"}
           className={style}
-          placeholder={style == "input" ? "Ingrese código HTMl" : "Traducción"}
+          placeholder={style == "input" ? "Ingrese código HTML" : "Traducción"}
           onChange={(e) => setTextToTranslate(e.target.value)}
           value={style === "input" ? textToTranslate : translatedText}
         />
