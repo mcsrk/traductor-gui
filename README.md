@@ -12,7 +12,7 @@ Clonar este repositorio localmente: `git clone https://github.com/mcsrk/traducto
 Acceder a la carpeta raíz desde consola  `cd traductor-gui`.  
 Instalar las depencias haciendo uso de `npm i`.  
 Ejecutar el proyecto en modo desarrollo `npm start`.  
-Asegurarse de tener el [servicio REST backend de traducción](https://github.com/dmateusb/html_to_haml) siendo ejecutado en  `localhost:4567`
+Asegurarse de tener el [servicio REST backend de traducción](https://github.com/dmateusb/html_to_haml) siendo ejecutado en  `localhost:4597`
 
 ### Referencias  
 Guía tutorial para la realización de esta interfaz gráfica: [Ania Kubow](https://github.com/kubowania) - [Google Translate GUI Tutorial](https://www.youtube.com/watch?v=aFISwq3wteY&t=420s)
