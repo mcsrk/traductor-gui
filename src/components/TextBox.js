@@ -10,6 +10,7 @@ const TextBox = ({
   textToTranslate,
   translatedText,
   setTranslatedText,
+  isOutput,
 }) => {
   const handleClickDelete = () => {
     setTextToTranslate("");
@@ -24,14 +25,29 @@ const TextBox = ({
           selectedLanguage={selectedLanguage}
         />
 
-        <textarea
-          disabled={style === "output"}
-          className={style}
-          placeholder={style == "input" ? "Ingrese código HTML" : "Traducción"}
-          onChange={(e) => setTextToTranslate(e.target.value)}
-          value={style === "input" ? textToTranslate : translatedText}
-        />
-        {/* <Highlight language="javascript"></Highlight> */}
+        {!isOutput ? (
+          <textarea
+            disabled={style === "output"}
+            className={style}
+            placeholder={
+              style == "input" ? "Ingrese código HTML" : "Traducción"
+            }
+            onChange={(e) => setTextToTranslate(e.target.value)}
+            value={style === "input" ? textToTranslate : translatedText}
+          />
+        ) : translatedText ? (
+          <Highlight language="haml">{translatedText}</Highlight>
+        ) : (
+          <textarea
+            disabled={style === "output"}
+            className={style}
+            placeholder={
+              style == "input" ? "Ingrese código HTML" : "Traducción"
+            }
+            onChange={(e) => setTextToTranslate(e.target.value)}
+            value={style === "input" ? textToTranslate : translatedText}
+          />
+        )}
 
         {style === "input" && (
           <div className="delete" onClick={handleClickDelete}>

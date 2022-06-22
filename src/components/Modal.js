@@ -42,7 +42,7 @@ const Modal = ({
                 color: "#8ab4f8",
               }}
             >
-              Slim
+              HAML
             </li>
           </div>
         </ul>
